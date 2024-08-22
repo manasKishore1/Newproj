@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You Proposal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #yesButton {
+            background-color: #28a745;
+            color: white;
+        }
+
+        #noButton {
+            background-color: #dc3545;
+            color: white;
+            position: absolute;
+        }
+
+        #message {
+            margin-top: 30px;
+            font-size: 1.5em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my partner?</h1>
+        <div class="buttons">
+            <button id="yesButton">Yes</button>
+            <button id="noButton">No</button>
+        </div>
+        <p id="message"></p>
+    </div>
+    <script>
+        const noButton = document.getElementById('noButton');
+        const yesButton = document.getElementById('yesButton');
+        const message = document.getElementById('message');
+
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.floor(Math.random() * window.innerWidth - noButton.clientWidth);
+            const y = Math.floor(Math.random() * window.innerHeight - noButton.clientHeight);
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+
+        yesButton.addEventListener('click', () => {
+            message.textContent = 'I knew you would say Yes!';
+        });
+
+        noButton.addEventListener('click', () => {
+            message.textContent = 'Why would you press No?';
+        });
+    </script>
+</body>
+</html>
